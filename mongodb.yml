@@ -10,9 +10,11 @@ spec:
       labels:
         app: mongodb
     spec:
+      terminationGracePeriodSeconds: 10
       containers:
       - name: mongodb
         image: mongo:3.4
+        imagePullPolicy: Always
         command:
         - mongod
         - "--replSet"
@@ -23,11 +25,11 @@ spec:
         - containerPort: 27017
           name: mongodb
         volumeMounts:
-        - name: mongodb
+        - name: mongodb-volume
           mountPath: /data/db
   volumeClaimTemplates:
   - metadata:
-      name: mongodb
+      name: mongodb-volume
       annotations:
         volume.alpha.kubernetes.io/storage-class: anything
     spec:
