@@ -1,6 +1,7 @@
 # MongoDB as Stateful Set with Replication
 
 **Please note that I do not maintain this any longer. I recommend [using the official Helm chart](https://github.com/kubernetes/charts/tree/master/stable/mongodb-replicaset).**
+
 Kubernetes Version: 1.5.2
 
 MongoDB Version: 3.2.4
